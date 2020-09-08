@@ -115,10 +115,7 @@ header {
     margin-bottom: 20px;    
 }
 
-.second-content-text {
-    display: flex;
-    justify-content: space-between;
-}
+
 
 .second-content-text p {
 font-size: 12px;
@@ -143,9 +140,9 @@ line-height: 22px;
 
 .second-content-text .hobbies {
     border: 1px solid white;
-    margin-right: 20px;
     border-radius: 4px;
-    width: 25vw;
+    width: 50%;
+    margin-top: 20px;
 }
 
 .second-content-text .hobbies h3 {
