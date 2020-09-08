@@ -1,0 +1,270 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #333;
+  color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+}
+
+h1 {
+  font-weight: 500;
+  margin-top: 12px;
+}
+
+h2,
+p {
+  color: #333;
+}
+
+.border {
+  border: none;
+  border-radius: 12px 12px 0 0;
+}
+
+#canvas {
+  align-content: center;
+  margin: 32px auto;
+  background-color: white;
+  width: 100%;
+}
+
+#canvasDiv {
+  padding: 0 3%;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 0 3%;
+}
+
+.toolbox {
+  background-color: #222222;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 62px;
+  width: 100%;
+  margin-top: -39px;
+  border-radius: 0 0 12px 12px;
+}
+
+#brush-tool {
+  padding: 6px 32px;
+  margin-right: 8px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  color: #333;
+  border-radius: 10px;
+  border: none;
+}
+
+#brush-tool:hover {
+    background-color: rgb(180, 180, 180);
+    color: #f0f0f0;
+}
+
+#eraser-tool {
+  padding: 6px 32px;
+  margin-right: 8px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  color: #333;
+  border-radius: 10px;
+  border: none;
+}
+
+#eraser-tool:hover {
+    background-color: rgb(180, 180, 180);
+    color: #f0f0f0;
+}
+
+#tool-line-width {
+  padding: 6px 32px;
+  margin-right: 8px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  border-radius: 10px;
+  border: none;
+}
+
+#tool-color {
+  padding: 6px 32px;
+  margin-right: 8px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  border-radius: 10px;
+  border: none;
+}
+
+option {
+    color: #333;
+}
+
+.tool-color-black {
+    color: #f0f0f0;
+}
+
+.button-bars {
+  align-content: center;
+  text-align: center;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:active {
+  transform: translateY(4px);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+#clear,
+#save {
+  line-height: 20px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 6px 32px;
+  border: none;
+  /* margin:10px 30px; */
+}
+
+#save {
+  background-color: rgb(56, 235, 71);
+}
+
+#save:hover {
+  background-color: rgb(48, 199, 61);
+  color: #f0f0f0;
+}
+
+#clear:hover {
+    background-color: rgb(180, 180, 180);
+    color: #f0f0f0;
+}
+
+#savedImg {
+  display: block;
+  margin: 40px auto;
+  width: 160px;
+  border-radius: 4px;
+  position: absolute;
+  right: 40px;
+}
+
+#outer-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#onstart-popup {
+  position: fixed;
+  /* box-shadow: 0 0 50px; */
+  top: 50px;
+  display: block;
+  width: 70%;
+  max-width: 400px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 10px 20px;
+  background: #f0f0f0;
+}
+
+#onstart-popup > div {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+#onstart-popup > div:hover {
+  cursor: pointer;
+  color: darkred;
+}
+
+.color-selector {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.color {
+  margin: 0 10px;
+  padding: 0;
+  height: 100px;
+  width: 100px;
+}
+
+.color:hover {
+  cursor: pointer;
+}
+
+[data-color="black"] {
+  background-color: #000000 !important;
+}
+[data-color="red"] {
+  background-color: #ff2b2b !important;
+}
+[data-color="blue"] {
+  background-color: #006eff !important;
+}
+[data-color="green"] {
+  background-color: #baff33 !important;
+}
+[data-color="purple"] {
+  background-color: #b700ff !important;
+}
+
+.tool-color-black {
+  background-color: #000000;
+}
+.tool-color-green {
+  background-color: #baff33;
+}
+.tool-color-red {
+  background-color: #ff2b2b;
+}
+.tool-color-purple {
+  background-color: #b700ff;
+}
+.tool-color-blue {
+  background-color: #006eff;
+}
+
+#tool-color {
+  background-color: #fff;
+}
+
+.active {
+  background: black;
+  color: white !important;
+  border: 1px solid white !important;
+}
+
+.active:hover {
+  background: black !important;
+  color: white !important;
+}

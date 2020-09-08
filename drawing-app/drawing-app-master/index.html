@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lets Draw!</title>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+  </head>
+
+  <body>
+    <!--CODE TO BE WRITTEN HERE--->
+    <!--creating a div for canvas where drawing is to be made-->
+    <h1>Lets Draw!</h1>
+    <div id="canvasDiv"></div>
+
+    <div class="wrapper">
+      <div class="toolbox">
+        <div class="tools">
+          <button id="brush-tool">Line</button>
+          <button id="eraser-tool">Eraser</button>
+          <select id="tool-line-width">
+            <option value=5>5</option>
+            <option value=10>10</option>
+            <option value=15>15</option>
+            <option value=20>20</option>
+            <option value=25>25</option>
+            <option value=50>50</option>
+          </select>
+          <select id="tool-color">
+            <option value='black' class='tool-color-black'>Black</option>
+            <option value='green' class='tool-color-green'>Green</option>
+            <option value='red' class='tool-color-red'>Red</option>
+            <option value='purple' class='tool-color-purple'>Purple</option>
+            <option value='blue' class='tool-color-blue'>Blue</option>
+          </select>
+        </div>
+
+        <div class="button-bars">
+          <button id="clear">CLEAR</button>
+          <button id="save">SAVE</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="img-container">
+      <img id="savedImg" alt="saved picture" src="./assets/drawing-app-screenshot.png"/>
+    </div>
+
+    <!-- Popup at the start -->
+    <div onclick="closePopup()" id="outer-popup"></div>
+    <div id="onstart-popup">
+      <h2>Drawing App</h2>
+      <p>
+        Welcome to the Drawing App. Click on the canvas to draw, click the clear
+        button to clear the canvas, and click the save button to save your
+        drawing. Have fun!
+      </p>
+      <h4>Select a Color</h4>
+      <section class="color-selector">
+        <div class="color" data-color="black"></div>
+        <div class="color" data-color="green"></div>
+        <div class="color" data-color="blue"></div>
+        <div class="color" data-color="purple"></div>
+        <div class="color" data-color="red"></div>
+      </section>
+      <div onclick="closePopup()">&times;</div>
+    </div>
+  </body>
+
+  <script src="script.js"></script>
+</html>
