@@ -1,0 +1,309 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+  }
+
+
+  body {
+    width: 100%;
+    background-image: url(/images/page-background-2.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    font-size: 18px;
+    font-family: Poppins;
+
+}
+
+header {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.top-header {
+    border-bottom: 1px solid white;
+    padding: 21px;
+    font-size: 14px;
+}
+
+.bottom-header {
+    border-bottom: 1px solid white;
+    padding: 10px;
+    background:#00222B;
+    font-size: 18px;
+}
+
+.bottom-header a {
+    text-decoration: none;
+    color: white;
+    margin-right: 10px;
+}
+
+.bottom-header a:hover {
+    transition: 0.6s;
+    color: #06748C;
+    text-shadow: 0 0 0.3em #06748C;
+}
+
+.page-content {
+    margin: 10px auto 0;
+    border-bottom: 1px solid white;
+}
+
+.first-content {
+    text-align: center;
+}
+
+.first-content h1 {
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.first-content form {
+    width: 80%;
+    margin-left: 40px;
+    margin-top: 10px;
+    display: inline-grid;
+}
+
+.form-item {
+    display: inline-grid;
+}
+
+.form-item textarea {
+    resize: none;
+    outline: none;
+    font: 400 13.3333px Poppins;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.first-content form label {
+    display: inline-block;
+    text-align: left;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.first-content form input {
+    padding: 4px;
+    display: inline-block;
+    outline: none;
+    font: 400 13.3333px Poppins;
+    border-radius: 4px;
+}
+
+.first-content form button {
+    margin-top: 10px;
+    background: none;
+    border: 2px solid white;
+    color: white;
+    padding: 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.first-content form button:hover {
+    box-shadow: 1px 1px 10px 1px white;
+}
+
+
+.second-content {
+    text-align:center;
+    margin-bottom: 10px;
+}
+.second-content h1 {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.second-content p {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.second-content img {
+    margin-top: 40px;
+    width: 350px;
+}
+
+
+footer {
+    display: flex;
+    background:#00222B;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+footer img {
+    width: 30px;
+    border-radius: 50%;
+    margin-right: 3px;
+   
+}
+
+@media  (min-width: 960px) {
+
+
+    .page-content
+    {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        width: 960px;
+        border-bottom: none;
+    }
+
+    .first-content {
+        text-align: left;
+    }
+    
+    .first-content h1 {
+        font-size: 24px;
+        margin-top: 20px;
+    }
+    
+    .first-content form {
+        width: 90%;
+        display: inline-grid;
+        margin: 0;
+        margin-bottom: 30px;
+    }
+    
+    .form-item {
+        display: inline-grid;
+    }
+    
+    .form-item textarea {
+        resize: none;
+        outline: none;
+        font: 400 13.3333px Poppins;
+        border-radius: 4px;
+        padding: 4px;
+    }
+    
+    .first-content form label {
+        display: inline-block;
+        text-align: left;
+        font-size: 14px;
+        margin-top: 8px;
+    }
+    
+    .first-content form input {
+        padding: 4px;
+        display: inline-block;
+        outline: none;
+        font: 400 13.3333px Poppins;
+        border-radius: 4px;
+    }
+    
+    .first-content form button {
+        margin-top: 10px;
+        background: none;
+        border: 2px solid white;
+        color: white;
+        padding: 6px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+    
+    .first-content form button:hover {
+        box-shadow: 1px 1px 10px 1px white;
+    }
+    
+    
+    .second-content {
+        text-align:center;
+        margin-bottom: 10px;
+        grid-area: span;
+    }
+    .second-content h1 {
+        font-size: 24px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .second-content p {
+        margin-top: 5px;
+        font-size: 14px;
+        text-align: left;
+    }
+
+    .second-content img {
+        margin-top: 100px;
+        width: 450px;
+    }
+
+    
+    
+    footer {
+        background:#00222B;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0;
+        padding: 16px;
+        border-top: 1px solid white;
+    }
+    
+    footer p {
+        display: inline-block;
+        font-size: 16px;   
+        margin-left: 6%;     
+    }
+    
+    footer div {
+        margin-right: 6%;
+    }
+
+    footer img {
+        width: 40px;
+        border-radius: 50%;
+        margin-right: 8px;
+    }
+    
+    footer img:hover {
+        box-shadow: 1px 1px 10px 1px white;
+        border-radius: 50%;
+    }
+
+}
+
+/* ANIMAÇÕES */
+
+[data-anime] {
+    opacity: 0;
+  }
+
+  .fadeInUp {
+    transform: translate3d(0,20px,0);
+  }
+  
+  .anime {
+    opacity: 1;
+    transform: none;
+    transition: transform .8s, opacity .8s;
+  }
+  
+ 
