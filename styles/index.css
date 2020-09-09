@@ -170,6 +170,10 @@ footer img {
 }
 
 @media  (min-width: 960px) {
+    
+    .bottom-header {
+        font-size: 18px;
+    }
 
     .page-content {
         width: 100%;
