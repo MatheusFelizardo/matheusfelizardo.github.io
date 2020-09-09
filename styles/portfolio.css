@@ -177,6 +177,10 @@ footer img {
 }
 
 @media  (min-width: 860px) {
+    
+    .bottom-header {
+        font-size: 18px;
+    }
 
     .first-content,
     .second-content {
