@@ -241,10 +241,10 @@ line-height: 22px;
 }
 
 .html-css  {
-    background: -webkit-linear-gradient(left, #00D1A8 70%, black 13.20%);
+    background: -webkit-linear-gradient(left, #00D1A8 80%, black 13.20%);
 }
 .javascript {
-    background: -webkit-linear-gradient(left, #00D1A8 65%, black 13.20%);
+    background: -webkit-linear-gradient(left, #00D1A8 80%, black 13.20%);
 }
 .nodejs  {
     background: -webkit-linear-gradient(left, #00D1A8 60%, black 13.20%);
@@ -260,17 +260,17 @@ line-height: 22px;
     background: -webkit-linear-gradient(left, #00D1A8 85%, black 13.20%);
 }
 .creativity  {
-    background: -webkit-linear-gradient(left, #00D1A8 75%, black 13.20%);
+    background: -webkit-linear-gradient(left, #00D1A8 85%, black 13.20%);
 }
 .leadership  {
-    background: -webkit-linear-gradient(left, #00D1A8 60%, black 13.20%);
+    background: -webkit-linear-gradient(left, #00D1A8 70%, black 13.20%);
 }
 
 .english  {
-    background: -webkit-linear-gradient(left, #00D1A8 60%, black 13.20%);
+    background: -webkit-linear-gradient(left, #00D1A8 70%, black 13.20%);
 }
 .uxui {
-    background: -webkit-linear-gradient(left, #00D1A8 50%, black 13.20%);
+    background: -webkit-linear-gradient(left, #00D1A8 70%, black 13.20%);
 }
 .office  {
     background: -webkit-linear-gradient(left, #00D1A8 50%, black 13.20%);
