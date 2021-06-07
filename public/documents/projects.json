@@ -1,0 +1,38 @@
+[   
+    {
+        "title": "Pomochallenge",
+        "image": "https://i.ibb.co/Q6xwWxz/pomochallenge.png",
+        "description": "Aplicativo para controle de produtividade alinhado à exercícios que melhoram sua qualidade de vida.",
+        "technologies": ["React", "Next.js", "Typescript", "Sass"],
+        "githubLink": "https://github.com/MatheusFelizardo/pomochallenges"
+    },
+    {
+        "title": "Chart Plot",
+        "image": "https://camo.githubusercontent.com/79a76548f73440efcd5a8b89e2a2263918fa0a516c909929847ed502ca361908/68747470733a2f2f692e6962622e636f2f644c30343967382f63686172742d706c6f742e706e67",
+        "description": "Aplicação criada para o desafio da empresa Intelie, onde é inserido um tipo específico de dado e é gerado um gráfico a partir dele.",
+        "technologies": ["React", "Chartjs", "Cypress"],
+        "githubLink": "https://github.com/MatheusFelizardo/challenge-chart-plot"
+    },
+    {
+        "title": "Task Manager App",
+        "image": "https://camo.githubusercontent.com/c111304c404a49c0c3cbad67293b01e03c89921c1d7cfddf3abab6ea5716c559/68747470733a2f2f692e6962622e636f2f445130444c34342f53637265656e73686f742d33332e706e67",
+        "description": "Aplicativo de administração de tarefas criado para estudo e prática de criação de APIs com o framework Laravel, mySQL e React.",
+        "technologies": ["React", "Laravel", "MySQL", "TailwindCSS"],
+        "githubLink": "https://github.com/MatheusFelizardo/task_app"
+    },
+    {
+        "title": "Pokeshop",
+        "image": "https://camo.githubusercontent.com/4f3a72102a43bd641c0476e76351f48c31f5065e08fc35b90ee15ce729228869/68747470733a2f2f692e6962622e636f2f507730376e79302f53637265656e73686f742d34362e706e67",
+        "description": "Loja de Pokémon feita em desafio proposto pela empresa B2W.",
+        "technologies": ["React", "Sass", "AdobeXD"],
+        "githubLink": "https://github.com/MatheusFelizardo/pokeshop"
+    },
+    {
+        "title": "Ecoleta",
+        "image": "https://user-images.githubusercontent.com/63763269/83439179-0dbf4d00-a419-11ea-874b-ade5f30c23fc.PNG",
+        "description": "O projeto em questão visa a criação de um site para localização/cadastro de pontos de coleta de resíduos recicláveis.        ",
+        "technologies": ["Javascript", "CSS", "HTML"],
+        "githubLink": "https://github.com/MatheusFelizardo/Ecoleta"
+    }
+]
+

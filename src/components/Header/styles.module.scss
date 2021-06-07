@@ -1,0 +1,29 @@
+.header {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    gap: 1.875rem;
+    height:5rem;
+    align-items: center;
+    justify-content: flex-end;
+
+    a {
+        font-weight: 500;
+
+        &:last-child {
+            border: 1px solid var(--white);
+            padding: .5rem .5rem;
+            border-radius: .2rem;
+
+            &:hover {
+                background: var(--green-500);
+                border: 1px solid var(--green-500);
+                color: var(--gray-800)                
+            }
+        }
+
+        &:hover {
+            color: var(--green-500) ;               
+        }
+    }
+}

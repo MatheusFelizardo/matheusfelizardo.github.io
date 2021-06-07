@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --white: #FFFFFF;
+    --black: #333;
+    --gray-100: #e1e1e6;
+    --gray-300: #a8a8b3;
+    --gray-800: #29292e;
+    --gray-850: #1f2729;
+    --gray-900: #121214;
+
+
+    --purple-500: #B4B0FB;
+    --purple-900: #a5a0fa;
+    --green-500: #04FDA3;
+    --cyan-500: #61dafb;
+    --yellow-500: #eba417;
+    
+}
+
+@media(max-width:1080px) {
+    html {
+        font-size: 93.75%;
+    }
+}
+
+@media(max-width:720px) {
+    html {
+        font-size: 87.5%;
+    }
+}
+
+
+body {
+background: linear-gradient(to right, #414345, #232526);
+color: var(--white);
+}
+
+body, input, select, textarea, button {
+    font: 400 1rem "Fira Code", sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration:none
+}
+
+.carousel-slider {
+    overflow: visible !important;
+    .control-dots {
+    bottom: -2rem !important;
+        
+    .dot.selected {
+        background: var(--purple-900) !important;
+      }
+    }
+
+    .control-arrow {
+        background: none !important;
+    }
+
+    .control-prev.control-arrow {
+        left: -5px !important;
+        &::before {
+            border-right: 8px solid var(--purple-500) !important; 
+        }
+
+        &:hover {
+            &::before {
+                border-right: 8px solid var(--purple-900) !important;
+            }
+        }
+    }
+
+    .control-next.control-arrow {
+        &::before {
+            border-left: 8px solid var(--purple-500) !important;
+        }
+
+        &:hover {
+            &::before {
+                border-left: 8px solid var(--purple-900) !important;
+            }
+        }
+    }
+}
