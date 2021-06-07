@@ -49,10 +49,10 @@ export default function Projetos() {
                     <div className={styles.experienceTimeContent}>
                         <p>Tempo de experiência com as tecnologias</p>
                         <br />
-                        <p>HTML | Javascript | CSS -> 1 ano</p>
-                        <p>Sass | JQuery | Node | Twig -> 8 meses</p>
-                        <p>React -> 6 meses</p>
-                        <p> Next | Typescript | PHP (Laravel) -> 4 meses</p>
+                        <p>HTML | Javascript | CSS {"->"} 1 ano</p>
+                        <p>Sass | JQuery | Node | Twig {"->"}  8 meses</p>
+                        <p>React {"->"}  6 meses</p>
+                        <p> Next | Typescript | PHP (Laravel) {"->"}  4 meses</p>
                         <br />
                         <p>O tempo de experiêcia acima refere-se à prática em projetos pessoais.</p>
 
