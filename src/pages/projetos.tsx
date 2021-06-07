@@ -18,7 +18,7 @@ export default function Projetos() {
                 <section className={styles.leftSideContainer}>
                     <h1>Projetos</h1>
                     
-                    <Carousel showStatus={false} showArrows={true} width="800px" className={styles.carouselContent}>
+                    <Carousel showThumbs={false} showStatus={false} showArrows={true} width="800px" className={styles.carouselContent}>
                         {
                             projects.map(project =>(
                                 <div key={project.title} className={styles.carouselCard}>

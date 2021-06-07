@@ -36,7 +36,6 @@ export default function Home() {
         <a target="blank" href="https://github.com/MatheusFelizardo"><img src="/images/github.svg" alt="Github" /></a>
         <a target="blank" href="https://www.linkedin.com/in/matheus-felizardo"><img src="/images/linkedin.svg" alt="Linkedin" /></a>
         <a target="blank" href="https://www.facebook.com/matheus.felizardo.3"><img src="/images/facebook.svg" alt="Facebook" /></a>
-
       </section>
 
     </main>
