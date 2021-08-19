@@ -1,6 +1,17 @@
 
 import styles from './home.module.scss';
 import Head from 'next/head'
+import { fadeIn } from 'react-animations'
+import styled, { keyframes } from 'styled-components';
+
+const fadeInAnimation = keyframes`${fadeIn}`
+const FadeInDiv = styled.div`
+  animation: 1s ${fadeInAnimation};
+`;
+
+const FadeInSection = styled.div`
+  animation: 3s ${fadeInAnimation};
+`;
 
 export default function Home() {
   return (
@@ -12,7 +23,7 @@ export default function Home() {
 
     <main className={styles.mainContainer}>
       <section className={styles.container}>
-        <div className={styles.textContainer}>
+        <FadeInDiv className={styles.textContainer}>
           <p>Olá, meu nome é </p>
           <h1 className={styles.nameText}>Matheus Rodrigues Felizardo.</h1>
           <p className={styles.subtitle}>Sou amante da tecnologia e almejo mudar vidas.</p>
@@ -24,19 +35,19 @@ export default function Home() {
           </p>
 
           <a target="blank" href="https://api.whatsapp.com/send?phone=+5521965572555&text=Olá Matheus!!">Entrar em contato</a>
-        </div>
+        </FadeInDiv>
 
-        <div className={styles.imageContainer}>
+        <FadeInDiv className={styles.imageContainer}>
           <img src="/images/developer.svg" alt="A developer" />
-        </div>
+        </FadeInDiv>
       </section>
 
-      <section className={styles.socialMediaContainer}>
+      <FadeInSection className={styles.socialMediaContainer}>
         <a target="blank" href="https://www.instagram.com/matheus.felizardo_"><img src="/images/instagram.svg" alt="Instagram" /></a>
         <a target="blank" href="https://github.com/MatheusFelizardo"><img src="/images/github.svg" alt="Github" /></a>
         <a target="blank" href="https://www.linkedin.com/in/matheus-felizardo"><img src="/images/linkedin.svg" alt="Linkedin" /></a>
         <a target="blank" href="https://www.facebook.com/matheus.felizardo.3"><img src="/images/facebook.svg" alt="Facebook" /></a>
-      </section>
+      </FadeInSection>
 
     </main>
     </>

@@ -11,8 +11,13 @@
   grid-template-columns: 1fr 30%;
   justify-content: center;
   align-items: center;
-
+  @media (min-width: 300px) and (max-width: 992px) { 
+    grid-template-columns: 1fr;
+  }
   .textContainer {
+    @media (min-width: 300px) and (max-width: 992px) { 
+      text-align: center;
+    }
     .nameText {
       font-family: Poppins;
       font-size: 2.5rem;
@@ -21,11 +26,20 @@
       margin-left: 2rem;
       margin-top: .5rem;
       max-width: initial;
+
+      @media (min-width: 300px) and (max-width: 992px) { 
+        font-size: 1.5rem;
+        margin-left: 0;
+      }
     }
 
     p {
       font-weight: 300;
       max-width: 640px;
+
+      @media (min-width: 300px) and (max-width: 992px) { 
+        font-size: .825rem;
+      }
       
       &.subtitle {
         max-width: initial;
@@ -35,6 +49,11 @@
         font-weight: bold;
         margin-left: 4rem;
         margin-bottom: 1rem;
+
+        @media (min-width: 300px) and (max-width: 992px) { 
+          font-size: 1rem;
+          margin-left: 0;
+        }
       }
     }
 
@@ -58,6 +77,9 @@
     position: absolute;
     right: 0;
     top: 7rem;
+    @media (min-width: 300px) and (max-width: 992px) { 
+     display: none;
+    }
     img {
       width: 100%;
     }
@@ -73,6 +95,11 @@
     flex-direction: column;
     gap: 0.75rem;
     bottom: 1rem;
+
+    @media (min-width: 300px) and (max-width: 992px) { 
+      position: initial;
+      margin-top: 2rem;
+    }
 
   a {
     display: flex;
@@ -92,3 +119,28 @@
   }
 
 }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { 
+
+ }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { 
+
+ }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { 
+
+ }
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { 
+
+ }
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) { 
+
+ }

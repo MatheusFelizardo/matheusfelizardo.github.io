@@ -4,7 +4,23 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {Carousel} from 'react-responsive-carousel'
 import projects from '../../public/documents/projects.json'
 import Head from 'next/head';
+import { fadeIn } from 'react-animations'
+import styled, { keyframes } from 'styled-components';
 
+const fadeInAnimation = keyframes`${fadeIn}`
+
+
+const FadeInSection1 = styled.div`
+  animation: 1s ${fadeInAnimation};
+`;
+
+const FadeInDiv = styled.div`
+  animation: 3s ${fadeInAnimation};
+`;
+
+const FadeInSection2 = styled.div`
+  animation: 5s ${fadeInAnimation};
+`;
 
 export default function Projetos() {
     
@@ -15,10 +31,10 @@ export default function Projetos() {
             </Head>
 
             <main className={styles.mainContainer}>
-                <section className={styles.leftSideContainer}>
+                <FadeInSection1 className={styles.leftSideContainer}>
                     <h1>Projetos</h1>
                     
-                    <Carousel showThumbs={false} showStatus={false} showArrows={true} width="800px" className={styles.carouselContent}>
+                    <Carousel showThumbs={false} showStatus={false} showArrows={true} className={styles.carouselContent}>
                         {
                             projects.map(project =>(
                                 <div key={project.title} className={styles.carouselCard}>
@@ -46,7 +62,7 @@ export default function Projetos() {
                         }
                     </Carousel>
 
-                    <div className={styles.experienceTimeContent}>
+                    <FadeInDiv className={styles.experienceTimeContent}>
                         <p>Tempo de experiência com as tecnologias</p>
                         <br />
                         <p>HTML | Javascript | CSS {"->"} 1 ano</p>
@@ -56,10 +72,10 @@ export default function Projetos() {
                         <br />
                         <p>O tempo de experiêcia acima refere-se à prática em projetos pessoais.</p>
 
-                    </div>
-                </section>
+                    </FadeInDiv>
+                </FadeInSection1>
 
-                <section className={styles.rightSideContainer}>
+                <FadeInSection2 className={styles.rightSideContainer}>
                     <h2>Tecnologias mais utilizadas</h2>
 
                     <div className={styles.technologiesLinesWrapper}>
@@ -82,7 +98,7 @@ export default function Projetos() {
                     </div>
                         
                     <img className={styles.coding} src="/images/coding.svg" alt="" />
-                </section>
+                </FadeInSection2>
             </main>
         </>
     )

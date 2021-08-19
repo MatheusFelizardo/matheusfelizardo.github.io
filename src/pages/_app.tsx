@@ -7,7 +7,6 @@ import '../styles/global.scss';
 import '../styles/nprogress.scss';
 
 Router.events.on('routeChangeStart', (url) => {
-  console.log(url)
   NProgress.start();
 })
 

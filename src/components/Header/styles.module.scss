@@ -6,7 +6,9 @@
     height:5rem;
     align-items: center;
     justify-content: flex-end;
-
+    @media (min-width: 300px) and (max-width: 992px) { 
+        justify-content: center;
+    }
     a {
         font-weight: 500;
 
