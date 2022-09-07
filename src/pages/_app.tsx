@@ -5,19 +5,17 @@ import { Header } from '../components/Header';
 import NProgress from 'nprogress'
 import '../styles/global.scss';
 import '../styles/nprogress.scss';
+// Router.events.on('routeChangeStart', (url) => {
+//   NProgress.start();
+// })
 
-Router.events.on('routeChangeStart', (url) => {
-  NProgress.start();
-})
-
-Router.events.on('routeChangeComplete', () => { NProgress.done(); })
-Router.events.on('routeChangeError', () => { NProgress.done(); })
+// Router.events.on('routeChangeComplete', () => { NProgress.done(); })
+// Router.events.on('routeChangeError', () => { NProgress.done(); })
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
   <>
-   <Header />
-   <Component {...pageProps} />
+    <Component {...pageProps} />
   </>
   )
 }

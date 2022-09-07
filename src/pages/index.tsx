@@ -1,55 +1,133 @@
-
-import styles from './home.module.scss';
 import Head from 'next/head'
-import { fadeIn } from 'react-animations'
-import styled, { keyframes } from 'styled-components';
+import React, { useEffect, useState } from 'react'
+import styled from 'styled-components'
+import Home from '../components/Pages/Home'
+import { useRouter } from 'next/router'
+import { Tabs, Menu, Layout, notification } from 'antd';
+import Projects from '../components/Pages/Projects'
+import { Spin } from 'antd';
+import { LoadingOutlined, UserOutlined, FileOutlined, SettingOutlined, CodeOutlined } from '@ant-design/icons';
+import useLanguage from '../hooks/useLanguage'
 
-const fadeInAnimation = keyframes`${fadeIn}`
-const FadeInDiv = styled.div`
-  animation: 1s ${fadeInAnimation};
-`;
+const { Sider, Content } = Layout;
 
-const FadeInSection = styled.div`
-  animation: 3s ${fadeInAnimation};
-`;
+export interface PageProps {
+  setTitle: React.Dispatch<React.SetStateAction<string>>
+  page?: number
+}
 
-export default function Home() {
+const Main = ({ page = 0 }: {page: number}) => {
+  const { language, translate, setLanguage } = useLanguage()
+  const [currentKey, setCurrentKey] = useState('1')
+  const [loading, setLoading] = useState(false)
+  const [collapsed, setCollapsed] = useState(false);
+  const items = [
+    {label: translate('About me'), key: '1', icon: <UserOutlined />}, 
+    {label: translate('Projects'), key: '2', icon: <CodeOutlined /> },
+    {label: translate('Resume'), key: '6', icon: <FileOutlined />, children: [
+      {label: <a download href="/documents/matheus-resume-en.pdf">{translate('In English')}</a>, key: '7'}, 
+      {label: <a download href="/documents/matheus-curriculum-ptBr.pdf">{translate('In Portuguese')}</a>, key: '8'}] },
+    {label: translate('Language'), key: '3', icon:  <SettingOutlined />, children: [
+      {label: translate('English'), key: '4'}, 
+      {label: translate('Portuguese'), key: '5'}] }
+  ]
+  const [showPage, setShowPage] = useState(1)
+
+  const pages = {
+    1: < Home/>,
+    2: <Projects />
+  }
+
+
+  const changePage = ({key}: {key: string}) => {
+    const currentLanguage = localStorage.getItem('language')
+    if (key === '3' || key === '6' || key === '7' || key === '8') return 
+
+    if (key === '4') {
+      if (currentLanguage === 'en') return
+      setLanguage('en')
+      localStorage.setItem('language', 'en');
+      setLoading(true)
+      return
+    } 
+    
+    if (key === '5') {
+      if (currentLanguage === 'pt-BR') return
+
+      setLanguage('pt-BR')
+      localStorage.setItem('language', 'pt-BR');
+      setLoading(true)
+      return
+    } 
+
+    setLoading(true)
+    notification.destroy()
+    setShowPage(Number(key))
+    setCurrentKey(key)
+  }
+
+  useEffect(()=> {
+    const time = setTimeout(() => {
+      setLoading(false)
+    }, 500)
+
+    return ()=> {
+      clearTimeout(time)
+    }
+
+  }, [showPage, language, loading])
+
   return (
-    <>
+    <Container>
+      <Head>
+          <title>{translate("Home | Matheus Felizardo - Front-end developer")}</title>
+      </Head>
+      <Layout>
+        <Sider
+          collapsible 
+          collapsed={collapsed} 
+          onCollapse={(value) => setCollapsed(value)}
+        >
+          <Menu
+            defaultSelectedKeys={['1']}
+            defaultOpenKeys={['sub1']}
+            mode="vertical"
+            theme="dark"
+            items={items}
+            onSelect={changePage}
+            selectedKeys={[currentKey]}
+          />
+        </Sider>
+        <Layout>
+          <Content>
+            {loading ? 
+                <Loading>
+                  <Spin indicator={<LoadingOutlined />} />
+                </Loading>
+                :
+                pages[showPage]
+              }
+          </Content>
+        </Layout>
+      </Layout>
+    </Container>
 
-    <Head>
-        <title>Home | Matheus Felizardo - Desenvolvedor web front-end (Rio de Janeiro - RJ)</title>
-    </Head>
-
-    <main className={styles.mainContainer}>
-      <section className={styles.container}>
-        <FadeInDiv className={styles.textContainer}>
-          <p>Olá, meu nome é </p>
-          <h1 className={styles.nameText}>Matheus Rodrigues Felizardo.</h1>
-          <p className={styles.subtitle}>Sou amante da tecnologia e almejo mudar vidas.</p>
-          
-          <p>Sou desenvolvedor front-end, tenho 26 anos e atualmente moro no Rio de Janeiro. <br />
-          Sou formado em Gestão de Tecnologia da Informação e estou cursando pós-graduação em Engenharia de Software. <br /><br />
-          Ingressei no mercado como desenvolvedor em outubro de 2020. <br />
-          Meu objetivo a medio prazo é trabalhar numa empresa internacional, pelo intercâmbio linguístico e cultural. E meu grande objetivo é impactar a vida das pessoas usando tecnologia.
-          </p>
-
-          <a target="blank" href="https://api.whatsapp.com/send?phone=+5521965572555&text=Olá Matheus!!">Entrar em contato</a>
-        </FadeInDiv>
-
-        <FadeInDiv className={styles.imageContainer}>
-          <img src="/images/developer.svg" alt="A developer" />
-        </FadeInDiv>
-      </section>
-
-      <FadeInSection className={styles.socialMediaContainer}>
-        <a target="blank" href="https://www.instagram.com/matheus.felizardo_"><img src="/images/instagram.svg" alt="Instagram" /></a>
-        <a target="blank" href="https://github.com/MatheusFelizardo"><img src="/images/github.svg" alt="Github" /></a>
-        <a target="blank" href="https://www.linkedin.com/in/matheus-felizardo"><img src="/images/linkedin.svg" alt="Linkedin" /></a>
-        <a target="blank" href="https://www.facebook.com/matheus.felizardo.3"><img src="/images/facebook.svg" alt="Facebook" /></a>
-      </FadeInSection>
-
-    </main>
-    </>
   )
 }
+
+export default Main
+
+const Container = styled.div`
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  
+`
+
+const Loading = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
